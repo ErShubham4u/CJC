@@ -1,0 +1,14 @@
+{
+  "name": "cjc",
+  "version": "1.0.0",
+  "description": "By CJC",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Shubham Kumar",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}
