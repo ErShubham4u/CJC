@@ -12,17 +12,13 @@ Functional Component  - NEW
 
 // React Functional Component
 
-const MainHeading = () => <h1 className="heading">Hello EveryOne !!! - MainHeading</h1>;
-
-const SubHeading = () => {
-  return <h1 className="heading">Hello EveryOne !!! - SubHeading</h1>;
-};
-
 const Title = () => <h1 className="title">Hello EveryOne !!! - Title</h1>;
 
 const HeadingComponent = () => (
   <div className="container">
+    {Title()}
     <Title />
+    <Title></Title>
     <h1 className="heading">Hello EveryOne !!! - Functional Component</h1>
   </div>
 );
