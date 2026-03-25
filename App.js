@@ -23,7 +23,8 @@ const Header = () => {
 };
 
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+  console.log(props);
   return (
     <div
       className="res-card"
@@ -36,10 +37,10 @@ const RestaurantCard = () => {
         src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2026/1/8/cf2e2a39-5439-4094-8cce-4b38388c438c_33722.JPG"
         alt="res-logo"
       />
-      <h3>Pizza Hut</h3>
-      <h4>Pizza</h4>
-      <h4>4.2 stars</h4>
-      <h4>38 minutes</h4>
+      <h3>{props.resName}</h3>
+      <h4>{props.cuisine}</h4>
+      <h4>{props.stars} stars</h4>
+      <h4>{props.time}</h4>
     </div>
   );
 };
@@ -49,12 +50,12 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
-        <RestaurantCard />
+        <RestaurantCard
+          resName="KFC"
+          cuisine="Burger, Fas Food"
+          stars="4.2"
+          time="25 minutes"
+        />
       </div>
     </div>
   );
