@@ -23,7 +23,8 @@ const Header = () => {
 };
 
 
-const RestaurantCard = ({ resName, cuisine, stars, time }) => {
+const RestaurantCard = (props) => {
+  const { resName, cuisine, stars, time } = props;
   return (
     <div
       className="res-card"
