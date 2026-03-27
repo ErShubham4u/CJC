@@ -22,8 +22,12 @@ const Header = () => {
   );
 };
 
+const CDN_URL="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
+
+
 const RestaurantCard = (props) => {
   const { resData } = props;
+  const {name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId,} = resData?.info;
   return (
     <div
       className="res-card"
@@ -33,16 +37,18 @@ const RestaurantCard = (props) => {
     >
       <img
         className="res-logo"
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2026/1/8/cf2e2a39-5439-4094-8cce-4b38388c438c_33722.JPG"
+        src={ CDN_URL + cloudinaryImageId }
         alt="res-logo"
       />
-      <h3>{resData.info.name}</h3>
-      <h4>{resData.info.avgRating} stars</h4>
-      <h4>{resData.info.costForTwo}</h4>
-      <h4>{resData.info.sla.deliveryTime} minutes</h4>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRating} stars</h4>
+      <h4>{costForTwo}</h4>
+      <h4>{sla.deliveryTime} minutes</h4>
     </div>
   );
 };
+
 
 const resList = [
   {
