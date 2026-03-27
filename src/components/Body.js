@@ -6,7 +6,11 @@ const Body = () => {
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        <RestaurantCard resData={resList[0]} />
+         {
+          resList.map((restaurant) => {
+            return <RestaurantCard key={restaurant.info.id} resData={restaurant} />;
+          })
+        }
       </div>
     </div>
   );
