@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   // useEffect(()=>{
   //   console.log("useEffect called");
@@ -33,6 +34,20 @@ const Body = () => {
   return (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Search Restaurants..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          <button
+            className="search-btn"
+            onClick={() => console.log(searchText)}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
