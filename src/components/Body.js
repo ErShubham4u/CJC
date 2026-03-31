@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
   // useEffect(()=>{
   //   console.log("useEffect called");
@@ -29,6 +30,11 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants,
     );
+
+    setFilteredRestaurants(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants,
+    );
   };
 
   return (
@@ -43,7 +49,14 @@ const Body = () => {
           />
           <button
             className="search-btn"
-            onClick={() => console.log(searchText)}
+            onClick={() => 
+            {
+              const filteredList = listOfRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase()),
+              );
+              setListOfRestaurants(filteredList);
+            }
+            }
           >
             Search
           </button>
