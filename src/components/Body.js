@@ -54,7 +54,7 @@ const Body = () => {
               const filteredList = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase()),
               );
-              setListOfRestaurants(filteredList);
+              setFilteredRestaurants(filteredList);
             }
             }
           >
@@ -67,14 +67,14 @@ const Body = () => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4.0,
             );
-            setListOfRestaurants(filteredList);
+            setFilteredRestaurants(filteredList);
           }}
         >
           Top Rated Restaurants
         </button>
       </div>
       <div className="res-container">
-        {listOfRestaurants.map((restaurant) => {
+        {filteredRestaurants.map((restaurant) => {
           return (
             <RestaurantCard key={restaurant.info.id} resData={restaurant} />
           );
