@@ -3,14 +3,10 @@ import { resList } from "../../utils/mockData";
 import { useState, useEffect } from "react";
 
 const Body = () => {
+
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-
-  // useEffect(()=>{
-  //   console.log("useEffect called");
-  // },[])
-  // console.log("Body rendered");
 
   useEffect(() => {
     fetchData();
@@ -20,11 +16,8 @@ const Body = () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING",
     );
-    const json = await data.json();
-    console.log(json);
 
-    // setListOfRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-    // Optional Chaining
+    const json = await data.json();
 
     setListOfRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
