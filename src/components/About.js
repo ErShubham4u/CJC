@@ -5,9 +5,8 @@ const About = () => {
   return (
     <div>
       <h1>About Us</h1>
-      <User />
+      <User name={"Shubham Kumar (function)"} />
       <UserClass />
-      
     </div>
   );
 };
