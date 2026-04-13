@@ -18,8 +18,8 @@ class About extends React.Component {
     return (
       <div>
         <h1>About</h1>
-        <User
-          name={"Shubham Kumar (functional)"}
+        <UserClass
+          name={"Shubham Kumar (class)"}
           location={"Patna, Bihar"}
           contact={"@ErShubham4u"}
         />
